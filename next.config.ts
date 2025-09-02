@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    experimental: {
+        appDir: true,
+    },
+    // baseDir or source directory is automatically src in Next.js 14+; older versions require appDir config
 };
 
-export default nextConfig;
+module.exports = nextConfig;
