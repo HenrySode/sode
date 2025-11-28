@@ -1,5 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+import { GlowingEffect } from '@/components/ui/glowing-effect';
 
 import Reveal from './reveal';
 
@@ -14,7 +15,8 @@ export default function SectionVisionMission() {
 
             <div className='mt-6 grid gap-6 md:grid-cols-2'>
                 <Reveal>
-                    <Card className='group rounded-2xl border-white/10 bg-surface-800/60 transition-transform hover:-translate-y-1 hover:shadow-glow'>
+                    <Card className='group relative rounded-2xl border-white/10 bg-surface-800/60 transition-transform hover:-translate-y-1 hover:shadow-glow'>
+                        <GlowingEffect disabled={false} />
                         <CardContent className='p-6'>
                             <Badge className='mb-4 rounded-full'>Vision</Badge>
                             <p className='text-slate-300/90'>
@@ -27,7 +29,8 @@ export default function SectionVisionMission() {
                 </Reveal>
 
                 <Reveal delay={0.05}>
-                    <Card className='group rounded-2xl border-white/10 bg-surface-800/60 transition-transform hover:-translate-y-1 hover:shadow-glow'>
+                    <Card className='group relative rounded-2xl border-white/10 bg-surface-800/60 transition-transform hover:-translate-y-1 hover:shadow-glow'>
+                        <GlowingEffect disabled={false} />
                         <CardContent className='p-6'>
                             <Badge className='mb-4 rounded-full'>Mission</Badge>
                             <p className='text-slate-300/90'>

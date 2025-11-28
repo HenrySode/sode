@@ -1,5 +1,6 @@
 import { Rocket, ShieldCheck, Sparkles } from 'lucide-react';
 
+import { CardStack } from '@/components/ui/card-stack';
 import Reveal from './reveal';
 
 const reasons = [
@@ -21,28 +22,30 @@ const reasons = [
 ];
 
 export default function SectionWhy() {
+    const cards = reasons.map((r, i) => ({
+        id: i,
+        name: r.title,
+        designation: '',
+        content: (
+            <div className='flex flex-col gap-4'>
+                <r.icon className='size-8 text-brand-400' />
+                <p>
+                    {r.desc}
+                </p>
+            </div>
+        ),
+    }));
+
     return (
         <section className='mx-auto max-w-7xl px-4 py-16 sm:px-6'>
             <Reveal>
-                <h2 className='text-2xl font-semibold tracking-tight'>
+                <h2 className='text-2xl font-semibold tracking-tight text-center'>
                     Why Choose Us
                 </h2>
             </Reveal>
 
-            <div className='mt-6 grid gap-6 md:grid-cols-3'>
-                {reasons.map((r, i) => (
-                    <Reveal key={r.title} delay={i * 0.05}>
-                        <div className='rounded-2xl border border-white/10 bg-surface-800/60 p-6 transition-transform hover:-translate-y-1 hover:shadow-glow'>
-                            <r.icon className='size-7 text-brand-400' />
-                            <h3 className='mt-3 text-lg font-medium'>
-                                {r.title}
-                            </h3>
-                            <p className='mt-2 text-sm text-slate-300/90'>
-                                {r.desc}
-                            </p>
-                        </div>
-                    </Reveal>
-                ))}
+            <div className='mt-10 flex items-center justify-center'>
+                <CardStack items={cards} />
             </div>
         </section>
     );

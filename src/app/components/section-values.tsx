@@ -1,5 +1,6 @@
 import { CheckCircle2 } from 'lucide-react';
 
+import { GlowingEffect } from '@/components/ui/glowing-effect';
 import Reveal from './reveal';
 
 const values = [
@@ -21,7 +22,8 @@ export default function SectionValues() {
             <div className='mt-4 grid gap-3 md:grid-cols-2'>
                 {values.map((v, i) => (
                     <Reveal key={v} delay={i * 0.05}>
-                        <div className='flex items-start gap-3 rounded-xl border border-white/10 bg-surface-800/60 p-4'>
+                        <div className='relative flex items-start gap-3 rounded-xl border border-white/10 bg-surface-800/60 p-4'>
+                            <GlowingEffect disabled={false} />
                             <CheckCircle2 className='mt-0.5 size-5 text-brand-400' />
                             <p className='text-slate-300/90'>{v}</p>
                         </div>
