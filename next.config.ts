@@ -1,11 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    experimental: {
-        appDir: true,
-    },
-    images: {
-        unoptimized: true,
-    },
+
     // baseDir or source directory is automatically src in Next.js 14+; older versions require appDir config
 };
 
